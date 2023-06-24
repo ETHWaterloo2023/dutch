@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,18 +18,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Your Dash</h1>
-        <div className={styles.grid}>
-          <a className={styles.card} href="/trips">
-            <h2>🚌 See Your Trips &rarr;</h2>
-            <p>Learn how to customize your wallet connection flow.</p>
-          </a>
-
-          <a className={styles.card} href="/createTrip">
-            <h2>✨ Create a Trip &rarr;</h2>
-            <p>Learn how to interact with Ethereum.</p>
-          </a>
-        </div>
+        <h2 className={styles.title}>Split Expenses. Preserve Friendships.</h2>
+        <h3>Going Dutch the Socially Acceptable Way.</h3>
+        <button className={styles.ctaButton} onClick={() => router.push('/dash')}>Sign Up</button>
       </main>
     </div>
   );

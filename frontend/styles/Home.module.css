@@ -78,6 +78,7 @@
   display: flex;
   align-items: start;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .card:hover,
@@ -96,6 +97,17 @@
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.ctaButton {
+  background-color: #5648ed;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 16px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  border-width: 0;
 }
 
 @media (max-width: 600px) {

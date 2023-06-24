@@ -6,6 +6,12 @@ const ViewTrip: NextPage = () => {
   return (
     <div className={styles.container}>
       <h2>View Trip</h2>
+      <ul>
+        <li>
+        </li>
+      </ul>
+
+      <button>End Trip</button>
     </div>
   );
 };

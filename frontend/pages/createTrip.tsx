@@ -6,6 +6,13 @@ const CreateTrip: NextPage = () => {
   return (
     <div className={styles.container}>
       <h2>Create a Trip</h2>
+      <form>
+        <label>
+          <span>Trip Name</span>
+          <input></input>
+        </label>
+        <button className="button">Create Trip</button>
+      </form>
     </div>
   );
 };

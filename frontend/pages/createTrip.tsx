@@ -5,14 +5,25 @@ import styles from "../styles/Trips.module.css";
 const CreateTrip: NextPage = () => {
   return (
     <div className={styles.container}>
-      <h2>Create a Trip</h2>
-      <form>
-        <label>
-          <span>Trip Name</span>
-          <input></input>
-        </label>
-        <button className="button">Create Trip</button>
-      </form>
+      <div className={styles.main}>
+        <h2>Create a Trip</h2>
+        <form>
+          <div>
+            <label>
+              <span>Trip Name</span>
+              <input></input>
+            </label>
+          </div>
+          <div>
+            <input placeholder="Fren's wallet address"></input>
+            <input placeholder="Fren's wallet address"></input>
+            <input placeholder="Fren's wallet address"></input>
+          </div>
+          <div className={styles.formFooter}>
+            <button className="button">Create Trip</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ pragma solidity ^0.8.4;
 contract GroupExpenses {
 
     address public organizer;
+    string public tripName;
     
     struct Participant {
         string name;
@@ -40,9 +41,10 @@ contract GroupExpenses {
     
     mapping(address => uint) public withdrawals;
 
-    constructor(string memory _name) {
+    constructor(string memory _organizer, string memory _tripName) {
         organizer = msg.sender;
-        createParticipant(_name, msg.sender);
+        createParticipant(_organizer, msg.sender);
+        tripName = _tripName;
     }
     
     function createParticipant(string memory _name, address _waddress) public {
@@ -67,6 +69,9 @@ contract GroupExpenses {
         for (uint i = 0; i < _payees.length; i++) {
             participants[_payees[i]].balance -= _portion;
         }        
+    }
+    function getTripName() public view returns (string memory) {
+        return tripName;
     }
 
     function createPayment(string memory _title, address _payee) public onlyByParticipant() payable {   

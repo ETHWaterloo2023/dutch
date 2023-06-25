@@ -16,11 +16,11 @@ const Header: React.FC = () => {
           className={styles.subtitleLink}
           onClick={() => router.push("/dash")}
         >
-          Trips
+          Home
         </span>
       </div>
       <div className={styles.connectSection}>
-        <ConnectButton />
+        <ConnectButton chainStatus="icon" showBalance={false} />
       </div>
     </header>
   );

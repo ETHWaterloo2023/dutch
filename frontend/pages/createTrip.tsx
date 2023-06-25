@@ -41,14 +41,17 @@ const CreateTrip = () => {
 
   const handleTripCreation = async (values: any) => {
     const factory = new ethers.ContractFactory(groupAbi, bytecode, signer);
-    const contract = await factory.deploy("Paige", values.tripName);
-    setContractAddress(contract.address);
-    localStorage.setItem("contract", contract.address);
-    console.log(contract.address);
-    return contract.address;
+    console.log(factory);
+    const contract = await factory
+      .deploy("Paige", values.tripName)
+      .then((contract) => {
+        console.log(contract.address);
+        setContractAddress(contract.address);
+      });
   };
 
-  const handleKeys = async (values: any, contractAddress: string) => {
+  const handleKeys = async (values: any) => {
+    console.log(values);
     const lockContract = new ethers.Contract(
       lockContractAddress,
       PublicLockV13.abi,
@@ -75,25 +78,17 @@ const CreateTrip = () => {
           <h2>
             Create a Trip <span>🎉</span>
           </h2>
-          {isLoading ? (
-            <div>Loading...</div>
-          ) : (
+          {isLoading && <div>Loading...</div>}
+          {!contractAddress && !isLoading ? (
             <Formik
               initialValues={{
                 tripName: "",
-                fren1: "",
-                fren2: "",
-                fren3: "",
               }}
               onSubmit={(
                 values: any,
                 { setSubmitting }: FormikHelpers<any>
               ) => {
-                setIsLoading(true);
-                handleTripCreation(values).then((contractAddress) => {
-                  handleKeys(values, contractAddress);
-                });
-                setIsLoading(false);
+                handleTripCreation(values);
               }}
             >
               <Form>
@@ -104,6 +99,25 @@ const CreateTrip = () => {
                   name="tripName"
                   placeholder="Girls Trip to Miami!"
                 />
+
+                <button type="submit">Submit</button>
+              </Form>
+            </Formik>
+          ) : (
+            <Formik
+              initialValues={{
+                fren1: "",
+                fren2: "",
+                fren3: "",
+              }}
+              onSubmit={(
+                values: any,
+                { setSubmitting }: FormikHelpers<any>
+              ) => {
+                handleKeys(values);
+              }}
+            >
+              <Form>
                 <label htmlFor="fren1">Fren 1</label>
                 <Field id="fren1" name="fren1" placeholder="paigexx.eth" />
                 <label htmlFor="fren2">Fren 2</label>

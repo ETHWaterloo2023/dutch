@@ -75,7 +75,7 @@ const CreateTrip = () => {
     );
     if (tx2) {
       console.log("Key TX", tx2);
-      router.push(`/trip`);
+      router.push(`/trip/${contractAddress}`);
     } else {
       return;
     }

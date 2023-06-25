@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/sdk": "^0.3.2",
     "@rainbow-me/rainbowkit": "^1.0.3",
     "@unlock-protocol/contracts": "^0.0.22",
+    "@worldcoin/idkit": "^0.5.1",
     "ethers": "^5.7.0",
     "formik": "^2.4.2",
-    "@worldcoin/idkit": "^0.5.1",
     "next": "^13.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

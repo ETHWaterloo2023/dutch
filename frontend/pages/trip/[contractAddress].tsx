@@ -21,14 +21,19 @@ const Trip: NextPage = () => {
         groupAbi,
         signer
       );
-      // contract.getTripName().then((res: any) => {
-      //   setTripName(res);
-      // });
-      // contract.getBalance(address).then((res: any) => {
-      //   console.log(ethers.utils.formatEther(res));
-      // });
+      setContract(contract);
     }
   }, [contractAddress]);
+
+  const addAmount = async () => {
+    const tx = await contract.createExpense(
+      address,
+      ethers.utils.parseEther("1"),
+      "0x6e62FF0591d4D8a0E5A1C274AbCFd2D716F1035E"
+    );
+    await tx.wait();
+    console.log("done");
+  };
 
   return (
     <div className={styles.container}>
@@ -54,7 +59,12 @@ const Trip: NextPage = () => {
                 <input type={"number"} min={10} max={50}></input>
               </td>
               <td>
-                <button style={{ height: 50, width: 50, padding: 0 }}>+</button>
+                <button
+                  onClick={addAmount}
+                  style={{ height: 50, width: 50, padding: 0 }}
+                >
+                  +
+                </button>
               </td>
             </tr>
             <tr>

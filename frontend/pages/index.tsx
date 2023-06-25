@@ -3,10 +3,25 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
+import { MetaMaskSDK } from "@metamask/sdk";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const router = useRouter();
+  const options = {
+    dappMetadata: {
+      name: "Dutch",
+      website: "https://dutch-git-main-dutch-waterloo.vercel.app/",
+    },
+  };
+
+  const MMSDK = new MetaMaskSDK(options);
+  const ethereum = MMSDK.getProvider();
+  const connected = ethereum?.isConnected();
+
+  useEffect(() => {}, [connected]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +34,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        {address && (
+        {connected && (
           <button onClick={() => router.push("/createTrip")}>
             Create Trip
           </button>

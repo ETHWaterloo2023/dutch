@@ -49,6 +49,7 @@ contract GroupExpenses {
         require(_waddress != participants[_waddress].waddress); //only one address per participant
         Participant memory participant = Participant({name: _name, waddress: _waddress, balance: 0});
         participants[_waddress] = participant;
+        
     }
     
     function createExpense(string memory _title, int256 _amount, address[] memory _payees) public onlyByParticipant() {

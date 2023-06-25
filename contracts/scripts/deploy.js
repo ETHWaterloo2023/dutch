@@ -1,7 +1,7 @@
 async function main() {
   const GroupExpenses = await ethers.getContractFactory("GroupExpenses");
 
-  const group_expenses = await GroupExpenses.deploy("Group Expense");
+  const group_expenses = await GroupExpenses.deploy("Paige");
   console.log("Contract deployed to address:", group_expenses.address);
 }
 

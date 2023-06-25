@@ -3,7 +3,12 @@
     "inputs": [
       {
         "internalType": "string",
-        "name": "_name",
+        "name": "_organizer",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_tripName",
         "type": "string"
       }
     ],
@@ -173,6 +178,19 @@
   },
   {
     "inputs": [],
+    "name": "getTripName",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "organizer",
     "outputs": [
       {
@@ -242,6 +260,19 @@
         "internalType": "address",
         "name": "payee",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "tripName",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
       }
     ],
     "stateMutability": "view",

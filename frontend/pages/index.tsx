@@ -1,4 +1,3 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
@@ -20,20 +19,20 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Dutch</h1>
-        <ConnectButton />
         {address && (
           <button onClick={() => router.push("/createTrip")}>
             Create Trip
           </button>
         )}
+        <h2 className={styles.title}>Split Expenses. Preserve Friendships.</h2>
+        <h3>Going Dutch the Socially Acceptable Way.</h3>
+        <button
+          className={styles.ctaButton}
+          onClick={() => router.push("/dash")}
+        >
+          Sign Up
+        </button>
       </main>
-
-      <footer className={styles.footer}>
-        <a href="https://rainbow.me" rel="noopener noreferrer" target="_blank">
-          Made with ❤️ by your frens at 🌈
-        </a>
-      </footer>
     </div>
   );
 };

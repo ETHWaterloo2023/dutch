@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  display: inline-block;
+  font-size: 48px;
+}
+
+.titleSection {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.titleLink {
+  cursor: pointer;
+}
+
+.subtitleLink {
+  display: inline-block;
+  margin-left: 48px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.connectSection {
+  width: auto;
+  display: flex;
+  align-items: center;
+}

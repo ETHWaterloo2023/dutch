@@ -12,6 +12,9 @@ import {
   polygonMumbai,
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
+import Head from "next/head";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -43,7 +46,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
+        <Header />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&display=swap" rel="stylesheet"></link>
+        </Head>
         <Component {...pageProps} />
+        <Footer />
       </RainbowKitProvider>
     </WagmiConfig>
   );

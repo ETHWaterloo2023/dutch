@@ -178,6 +178,36 @@
   },
   {
     "inputs": [],
+    "name": "getParticipantsList",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "waddress",
+            "type": "address"
+          },
+          {
+            "internalType": "int256",
+            "name": "balance",
+            "type": "int256"
+          }
+        ],
+        "internalType": "struct GroupExpenses.Participant[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getTripName",
     "outputs": [
       {
@@ -211,6 +241,35 @@
       }
     ],
     "name": "participants",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "waddress",
+        "type": "address"
+      },
+      {
+        "internalType": "int256",
+        "name": "balance",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "participantsList",
     "outputs": [
       {
         "internalType": "string",

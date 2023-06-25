@@ -10,6 +10,7 @@ import {
   optimism,
   polygon,
   polygonMumbai,
+  sepolia,
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import Head from "next/head";
@@ -24,6 +25,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     arbitrum,
     polygonMumbai,
     goerli,
+    sepolia,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [goerli] : []),
   ],
   [publicProvider()]
@@ -49,8 +51,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Header />
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"></link>
-          <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&display=swap" rel="stylesheet"></link>
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            // crossorigin="crossorigin"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <Component {...pageProps} />
         <Footer />

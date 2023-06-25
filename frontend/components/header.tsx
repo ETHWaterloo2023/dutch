@@ -26,7 +26,7 @@ const Header: React.FC = () => {
         </span>
       </div>
       <div className={styles.connectSection}>
-        <ConnectButton chainStatus="icon" showBalance={false} />
+        {/* <ConnectButton chainStatus="icon" showBalance={false} /> */}
       </div>
     </header>
   );

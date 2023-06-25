@@ -30,8 +30,8 @@ const Dash: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Your Dash</h1>
-        <div>
+        <h1 className={styles.title}>Home</h1>
+        <div className={styles.humanity}>
           {human ? (<span className={styles.isHuman}>You are a human</span>) :
             <IDKitWidget
               action=""
@@ -49,12 +49,12 @@ const Dash: NextPage = () => {
         <div className={styles.grid}>
           <a className={styles.card}  onClick={() => router.push('/trips')}>
             <h2>🚌 See Your Trips &rarr;</h2>
-            <p>Learn how to customize your wallet connection flow.</p>
+            <p>Explore current and past trips you and your frens have taken</p>
           </a>
 
           <a className={styles.card}  onClick={() => router.push('/createTrip')}>
             <h2>✨ Create a Trip &rarr;</h2>
-            <p>Learn how to interact with Ethereum.</p>
+            <p>Venture forth with your frens on a new adventure</p>
           </a>
         </div>
       </main>

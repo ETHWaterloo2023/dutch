@@ -48,7 +48,6 @@ const CreateTrip = () => {
     contract.deployTransaction;
     await contract.deployTransaction.wait();
     console.log(contract.address);
-
     setContractAddress(contract.address);
     setIsLoading(false);
   };
@@ -101,8 +100,7 @@ const CreateTrip = () => {
                   values: any,
                   { setSubmitting }: FormikHelpers<any>
                 ) => {
-                  router.push("/trip/kjalfa");
-                  // handleTripCreation(values);
+                  handleTripCreation(values);
                 }}
               >
                 <Form>

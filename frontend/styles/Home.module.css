@@ -58,7 +58,7 @@
 
 .grid {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
@@ -72,8 +72,13 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  background-color: #d5d7e1;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 350px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .card:hover,
@@ -92,6 +97,17 @@
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.ctaButton {
+  background-color: #5648ed;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 16px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  border-width: 0;
 }
 
 @media (max-width: 600px) {
